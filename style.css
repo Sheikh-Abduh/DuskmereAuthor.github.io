@@ -1,133 +1,132 @@
-/* 💀 General Styles */
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel&display=swap');
+/* Cool & Edgy Styles for Duskmere */
 
+/* Root Variables for Easy Customization */
+:root {
+    --background: #121212; /* Dark but stylish */
+    --text-color: #e0e0e0; /* Soft white */
+    --accent: #d400ff; /* Neon purple for a striking contrast */
+    --highlight: #ff1744; /* Deep red highlights */
+    --border-color: rgba(255, 255, 255, 0.2); /* Subtle border effect */
+}
+
+/* General Page Styling */
 body {
-    font-family: 'Cinzel', serif;
-    background-color: #050505; /* Deep black */
-    color: #c4b998; /* Aged parchment color */
+    background: var(--background);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-/* 🔥 Header */
+/* Header */
 header {
-    background: linear-gradient(to right, #1a0000, #000000, #1a0000);
-    padding: 30px 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-    border-bottom: 3px solid #800000;
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    padding: 20px 0;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid var(--highlight);
+    box-shadow: 0 4px 10px rgba(255, 23, 68, 0.3);
 }
 
-h1 {
-    font-family: 'UnifrakturMaguntia', cursive;
-    font-size: 48px;
-    color: #8b0000; /* Deep blood red */
-    letter-spacing: 3px;
-}
-
-/* ⚔️ Navigation */
-nav {
-    background-color: #0f0f0f;
-    padding: 15px;
-    border-bottom: 2px solid #600000;
-}
-
+/* Navigation Bar */
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #c41e3a; /* Blood Red */
+    color: var(--accent);
     text-decoration: none;
-    font-size: 20px;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
 }
 
 nav ul li a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px #c41e3a;
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
 }
 
-/* 🩸 Banner */
-#banner {
-    width: 100%;
-    overflow: hidden;
-}
-
-#banner img {
-    width: 100%;
-    height: auto;
-    opacity: 0.9;
-    filter: contrast(1.2) brightness(0.7);
-}
-
-/* ☠️ Intro Section */
-#intro {
-    background: url('images/dark-parchment.jpg') center/cover no-repeat;
-    padding: 50px 20px;
-    border-top: 3px solid #600000;
-    border-bottom: 3px solid #600000;
-}
-
-h2 {
-    font-family: 'UnifrakturMaguntia', cursive;
-    font-size: 36px;
-    color: #9a162e;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #b0a489;
-}
-
-/* 🔥 Buttons */
+/* Buttons */
 .button {
-    background-color: #600000;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 20px;
     border-radius: 5px;
-    border: 2px solid #900000;
     font-size: 18px;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 0px 10px rgba(212, 0, 255, 0.5);
 }
 
 .button:hover {
-    background-color: #8b0000;
-    border-color: #c41e3a;
-    box-shadow: 0 0 10px #c41e3a;
+    background: var(--highlight);
+    box-shadow: 0px 0px 15px rgba(255, 23, 68, 0.7);
 }
 
-/* 👁️ Grimdark Flickering Effect */
-@keyframes flicker {
-    0% { opacity: 1; }
-    50% { opacity: 0.8; }
-    100% { opacity: 1; }
+/* Main Sections */
+section {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
 }
 
-h1, h2, nav ul li a, .button {
-    animation: flicker 3s infinite alternate;
+section h2 {
+    color: var(--accent);
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-/* ⚰️ Footer */
+/* Forms (For Polls & Contact) */
+form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid var(--border-color);
+}
+
+input[type="radio"] {
+    margin: 10px;
+    accent-color: var(--highlight);
+}
+
+button[type="submit"] {
+    background: var(--highlight);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: var(--accent);
+}
+
+/* Footer */
 footer {
-    margin-top: 20px;
+    background: #1a1a1a;
     padding: 15px;
-    background: linear-gradient(to right, #1a0000, #000000, #1a0000);
-    border-top: 2px solid #600000;
-    color: #666;
-}
-
-footer p {
+    color: var(--text-color);
     font-size: 14px;
+    border-top: 2px solid var(--highlight);
 }
-
