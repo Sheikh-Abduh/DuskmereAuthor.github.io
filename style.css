@@ -1,1 +1,133 @@
+/* 💀 General Styles */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel&display=swap');
+
+body {
+    font-family: 'Cinzel', serif;
+    background-color: #050505; /* Deep black */
+    color: #c4b998; /* Aged parchment color */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* 🔥 Header */
+header {
+    background: linear-gradient(to right, #1a0000, #000000, #1a0000);
+    padding: 30px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    border-bottom: 3px solid #800000;
+}
+
+h1 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 48px;
+    color: #8b0000; /* Deep blood red */
+    letter-spacing: 3px;
+}
+
+/* ⚔️ Navigation */
+nav {
+    background-color: #0f0f0f;
+    padding: 15px;
+    border-bottom: 2px solid #600000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #c41e3a; /* Blood Red */
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #c41e3a;
+}
+
+/* 🩸 Banner */
+#banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+    filter: contrast(1.2) brightness(0.7);
+}
+
+/* ☠️ Intro Section */
+#intro {
+    background: url('images/dark-parchment.jpg') center/cover no-repeat;
+    padding: 50px 20px;
+    border-top: 3px solid #600000;
+    border-bottom: 3px solid #600000;
+}
+
+h2 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 36px;
+    color: #9a162e;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #b0a489;
+}
+
+/* 🔥 Buttons */
+.button {
+    background-color: #600000;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #900000;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #8b0000;
+    border-color: #c41e3a;
+    box-shadow: 0 0 10px #c41e3a;
+}
+
+/* 👁️ Grimdark Flickering Effect */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+h1, h2, nav ul li a, .button {
+    animation: flicker 3s infinite alternate;
+}
+
+/* ⚰️ Footer */
+footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(to right, #1a0000, #000000, #1a0000);
+    border-top: 2px solid #600000;
+    color: #666;
+}
+
+footer p {
+    font-size: 14px;
+}
 
