@@ -1,36 +1,36 @@
-/* Modern & Edgy Styles for Duskmere */
+/* Modern Gothic Styles for Duskmere */
 
-/* Root Variables for Easy Customization */
+/* Root Variables for Customization */
 :root {
-    --background: #181818; /* Dark, but refined */
-    --text-color: #e0e0e0; /* Soft white for readability */
-    --primary-accent: #3f51b5; /* Deep electric blue */
-    --secondary-accent: #ff4081; /* Neon pink for contrast */
-    --highlight: #00e5ff; /* Cyan highlights */
-    --border-color: rgba(255, 255, 255, 0.15); /* Subtle, modern borders */
+    --background: #111; /* Deep black, like an aged leather-bound book */
+    --text-color: #e6e1d8; /* Aged parchment white */
+    --primary-accent: #8d0202; /* Blood-red, regal yet dark */
+    --secondary-accent: #524763; /* Aged purple, mysterious and arcane */
+    --gold-accent: #b49b6e; /* Antique gold for a noble touch */
+    --border-color: rgba(180, 155, 110, 0.3); /* Subtle gold-toned borders */
 }
 
 /* General Page Styling */
 body {
     background: var(--background);
     color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Cinzel', serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    transition: background 0.3s ease-in-out;
 }
 
 /* Header */
 header {
-    background: linear-gradient(to right, #222, #111);
-    padding: 20px 0;
-    font-size: 24px;
+    background: linear-gradient(to right, #000, #1a1a1a);
+    padding: 25px 0;
+    font-size: 28px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--primary-accent);
-    box-shadow: 0 4px 10px rgba(63, 81, 181, 0.3);
+    letter-spacing: 3px;
+    color: var(--gold-accent);
+    box-shadow: 0 6px 15px rgba(180, 155, 110, 0.3);
+    font-family: 'Uncial Antiqua', cursive;
 }
 
 /* Navigation Bar */
@@ -39,7 +39,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav ul li {
@@ -47,18 +47,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--highlight);
+    color: var(--gold-accent);
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
     transition: 0.3s ease-in-out;
     padding-bottom: 3px;
     border-bottom: 2px solid transparent;
+    font-family: 'Cinzel Decorative', serif;
 }
 
 nav ul li a:hover {
-    color: var(--secondary-accent);
-    border-bottom: 2px solid var(--secondary-accent);
+    color: var(--primary-accent);
+    border-bottom: 2px solid var(--primary-accent);
 }
 
 /* Buttons */
@@ -74,12 +75,13 @@ nav ul li a:hover {
     border: none;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0px 0px 12px rgba(63, 81, 181, 0.5);
+    box-shadow: 0px 0px 12px rgba(141, 2, 2, 0.5);
+    font-family: 'Cinzel Decorative', serif;
 }
 
 .button:hover {
     background: var(--secondary-accent);
-    box-shadow: 0px 0px 18px rgba(255, 64, 129, 0.7);
+    box-shadow: 0px 0px 18px rgba(82, 71, 99, 0.7);
 }
 
 /* Main Sections */
@@ -90,31 +92,40 @@ section {
 }
 
 section h2 {
-    color: var(--highlight);
+    color: var(--gold-accent);
     font-size: 30px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-family: 'Uncial Antiqua', cursive;
+    text-shadow: 0px 0px 8px rgba(180, 155, 110, 0.4);
 }
 
-/* Cards */
-.card {
-    background: rgba(255, 255, 255, 0.07);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+/* Decorative Borders */
+.border-box {
+    border: 2px solid var(--border-color);
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
 }
 
-.card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-accent);
+    border-radius: 5px;
 }
 
 /* Forms */
 form {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
     padding: 25px;
     border-radius: 10px;
     max-width: 500px;
@@ -124,12 +135,12 @@ form {
 
 input[type="radio"] {
     margin: 10px;
-    accent-color: var(--highlight);
+    accent-color: var(--gold-accent);
 }
 
 /* Submit Button */
 button[type="submit"] {
-    background: var(--secondary-accent);
+    background: var(--primary-accent);
     border: none;
     color: #fff;
     padding: 12px 18px;
@@ -138,18 +149,19 @@ button[type="submit"] {
     cursor: pointer;
     transition: 0.3s;
     border-radius: 5px;
-    box-shadow: 0px 0px 12px rgba(255, 64, 129, 0.6);
+    box-shadow: 0px 0px 12px rgba(141, 2, 2, 0.6);
 }
 
 button[type="submit"]:hover {
-    background: var(--primary-accent);
+    background: var(--secondary-accent);
 }
 
 /* Footer */
 footer {
-    background: #222;
+    background: #1a1a1a;
     padding: 20px;
-    color: var(--text-color);
+    color: var(--gold-accent);
     font-size: 14px;
-    border-top: 2px solid var(--highlight);
+    border-top: 2px solid var(--gold-accent);
+    font-family: 'Cinzel', serif;
 }
