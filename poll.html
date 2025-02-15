@@ -1,15 +1,80 @@
-<h2>Decide the Fate of Duskmere</h2>
-<p>Vote on what action a faction should take next:</p>
-
-<form id="pollForm">
-    <label><input type="radio" name="decision" value="War"> Declare War</label><br>
-    <label><input type="radio" name="decision" value="Ally"> Form an Alliance</label><br>
-    <label><input type="radio" name="decision" value="Betray"> Betray Their Allies</label><br>
-    <button type="button" onclick="submitPoll()">Vote</button>
-</form>
-
-<script>
-function submitPoll() {
-    alert("Your vote has been recorded!");
-}
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duskmere Poll</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional Gothic Styling for Poll */
+        .poll-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(180, 155, 110, 0.3);
+        }
+        .poll-question {
+            font-size: 24px;
+            font-family: 'Uncial Antiqua', cursive;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+        .poll-options {
+            text-align: left;
+        }
+        .poll-options label {
+            display: block;
+            font-size: 18px;
+            font-family: 'Cinzel', serif;
+            color: var(--text-color);
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .poll-options input[type="radio"] {
+            margin-right: 10px;
+            accent-color: var(--gold-accent);
+        }
+        .submit-button {
+            margin-top: 20px;
+            background: var(--primary-accent);
+            color: #fff;
+            padding: 12px 18px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+            box-shadow: 0px 0px 12px rgba(141, 2, 2, 0.6);
+            font-family: 'Cinzel Decorative', serif;
+            border: none;
+        }
+        .submit-button:hover {
+            background: var(--secondary-accent);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Duskmere Poll
+    </header>
+    <section>
+        <div class="poll-container">
+            <form>
+                <div class="poll-question">Which faction in Duskmere would you pledge loyalty to?</div>
+                <div class="poll-options">
+                    <label><input type="radio" name="faction" value="House of D’Noirville"> House of D’Noirville - The disciplined warriors of the crimson raven.</label>
+                    <label><input type="radio" name="faction" value="Ironclad Order"> Argent Dawn - Stoic defenders sworn to the unbreakable law.</label>
+                    <label><input type="radio" name="faction" value="Drakovia"> Voivodeship of Drakovia - The cursed but relentless warlords of the east.</label>
+                </div>
+                <button type="submit" class="submit-button">Vote</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 Duskmere Chronicles. All Rights Reserved.
+    </footer>
+</body>
+</html>
