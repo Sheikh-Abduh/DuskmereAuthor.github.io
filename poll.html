@@ -1,1 +1,16 @@
+<h2>Decide the Fate of Duskmere</h2>
+<p>Vote on what action a faction should take next:</p>
+
+<form id="pollForm">
+    <label><input type="radio" name="decision" value="War"> Declare War</label><br>
+    <label><input type="radio" name="decision" value="Ally"> Form an Alliance</label><br>
+    <label><input type="radio" name="decision" value="Betray"> Betray Their Allies</label><br>
+    <button type="button" onclick="submitPoll()">Vote</button>
+</form>
+
+<script>
+function submitPoll() {
+    alert("Your vote has been recorded!");
+}
+</script>
 
