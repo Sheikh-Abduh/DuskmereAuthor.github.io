@@ -16,9 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
         storyList.innerHTML = "";
         stories.forEach((story, index) => {
             const li = document.createElement("li");
+            li.classList.add("story-item"); // Apply styling
             li.innerHTML = `<strong>${story.title}</strong> by ${story.author}
-                <button onclick="editStory(${index})">Edit</button>
-                <button onclick="deleteStory(${index})">Delete</button>`;
+                <button class="edit-btn" onclick="editStory(${index})">Edit</button>
+                <button class="delete-btn" onclick="deleteStory(${index})">Delete</button>`;
             storyList.appendChild(li);
         });
     }
