@@ -3,78 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duskmere Poll</title>
+    <title>Duskmere Polls - The Faction’s Fate</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Additional Gothic Styling for Poll */
-        .poll-container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(180, 155, 110, 0.3);
-        }
-        .poll-question {
-            font-size: 24px;
-            font-family: 'Uncial Antiqua', cursive;
-            color: var(--gold-accent);
-            margin-bottom: 20px;
-        }
-        .poll-options {
-            text-align: left;
-        }
-        .poll-options label {
-            display: block;
-            font-size: 18px;
-            font-family: 'Cinzel', serif;
-            color: var(--text-color);
-            padding: 5px 0;
-            cursor: pointer;
-        }
-        .poll-options input[type="radio"] {
-            margin-right: 10px;
-            accent-color: var(--gold-accent);
-        }
-        .submit-button {
-            margin-top: 20px;
-            background: var(--primary-accent);
-            color: #fff;
-            padding: 12px 18px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            border-radius: 5px;
-            box-shadow: 0px 0px 12px rgba(141, 2, 2, 0.6);
-            font-family: 'Cinzel Decorative', serif;
-            border: none;
-        }
-        .submit-button:hover {
-            background: var(--secondary-accent);
-        }
-    </style>
 </head>
 <body>
     <header>
-        Duskmere Poll
+        <h1>The Faction’s Fate</h1>
+        <p>Cast your vote. Decide their destiny.</p>
     </header>
-    <section>
-        <div class="poll-container">
-            <form>
-                <div class="poll-question">Which faction in Duskmere would you pledge loyalty to?</div>
-                <div class="poll-options">
-                    <label><input type="radio" name="faction" value="House of D’Noirville"> House of D’Noirville - The disciplined warriors of the crimson raven.</label>
-                    <label><input type="radio" name="faction" value="Ironclad Order"> Argent Dawn - Stoic defenders sworn to the unbreakable law.</label>
-                    <label><input type="radio" name="faction" value="Drakovia"> Voivodeship of Drakovia - The cursed but relentless warlords of the east.</label>
-                </div>
-                <button type="submit" class="submit-button">Vote</button>
+    
+    <section id="poll-container">
+        <div class="poll-box">
+            <h2 id="poll-question">Which faction should wage war next?</h2>
+            <form id="poll-form">
+                <label class="poll-option">
+                    <input type="radio" name="vote" value="House D’Noirville"> House D’Noirville
+                </label>
+                <label class="poll-option">
+                    <input type="radio" name="vote" value="The Crimson Vow"> The Crimson Vow
+                </label>
+                <label class="poll-option">
+                    <input type="radio" name="vote" value="The Argent Dawn"> The Argent Dawn
+                </label>
+                <label class="poll-option">
+                    <input type="radio" name="vote" value="The Bloodmarked"> The Bloodmarked
+                </label>
+                <button type="submit" class="vote-button">Vote</button>
             </form>
+            <p id="vote-confirmation" class="hidden">Thank you for voting. Your choice has been recorded.</p>
         </div>
     </section>
+    
+    <!-- Admin Panel (Only visible to the owner) -->
+    <section id="admin-panel" class="hidden">
+        <h2>Poll Management</h2>
+        <label for="new-question">New Poll Question:</label>
+        <input type="text" id="new-question" placeholder="Enter poll question...">
+        
+        <div id="options-container">
+            <label>Poll Options:</label>
+            <div class="option-group">
+                <input type="text" class="poll-option-input" placeholder="Enter option...">
+                <button class="remove-option">✖</button>
+            </div>
+        </div>
+        <button id="add-option">+ Add Option</button>
+        <button id="save-poll">Save Poll</button>
+        <button id="close-poll" class="danger">Close Poll</button>
+    </section>
+
     <footer>
-        &copy; 2025 Duskmere Chronicles. All Rights Reserved.
+        <p>Duskmere Chronicles &copy; 2025 | Blood, Betrayal, and Consequence</p>
     </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pollForm = document.getElementById("poll-form");
+            const voteConfirmation = document.getElementById("vote-confirmation");
+            const adminPanel = document.getElementById("admin-panel");
+            
+            // Simulating owner authentication (Replace with actual authentication logic)
+            const isOwner = true; // Set to false for regular users
+            if (isOwner) {
+                adminPanel.classList.remove("hidden");
+            }
+            
+            // Handling voting process
+            pollForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                voteConfirmation.classList.remove("hidden");
+                pollForm.style.display = "none";
+            });
+            
+            // Poll Management (Only Owner)
+            if (isOwner) {
+                document.getElementById("add-option").addEventListener("click", function() {
+                    const optionContainer = document.getElementById("options-container");
+                    const newOption = document.createElement("div");
+                    newOption.classList.add("option-group");
+                    newOption.innerHTML = '<input type="text" class="poll-option-input" placeholder="Enter option..."> <button class="remove-option">✖</button>';
+                    optionContainer.appendChild(newOption);
+                });
+                
+                document.getElementById("close-poll").addEventListener("click", function() {
+                    alert("Poll closed. No further votes can be submitted.");
+                    document.getElementById("poll-container").innerHTML = "<h2>Poll Closed</h2><p>Results will be published soon.</p>";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
